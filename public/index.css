@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --fundo: #303030;
+  --fundo-hover: rgba(255 , 255 , 255, .08)
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--fundo);
+}
+
+.img-wrapper{
+  padding: 20px;
+  border-radius: 50%;
+  width: 20%;
+}
+
+.img-wrapper:hover{
+  background-color: var(--fundo-hover);
+}
+
+.img-wrapper img{
+  box-sizing: content-box;
+  width: 100%;
+}
