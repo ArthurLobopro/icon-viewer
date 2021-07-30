@@ -2,7 +2,7 @@
   "name": "icon-viewer",
   "productName": "icon-viewer",
   "version": "1.0.0",
-  "description": "Icon viwer from electron aplication",
+  "description": "Taskbar Icon Viewer",
   "main": "electron/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -19,12 +19,22 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon":"./build/icon",
+        "ignore": [
+          ".gitignore",
+          "build/",
+          "yarn.lock"
+        ]
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "icon_viewer"
+            "name": "icon_viwer",
+            "setupExe": "${name}-${version}-setup.exe",
+            "setupIcon": "./build/icon.ico",
+            "iconURL": "./build/icon.ico"
           }
         },
         {
