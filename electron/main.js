@@ -25,7 +25,7 @@ const createWindow = () => {
 app.on('ready', createWindow);
 
 const sysIcon = process.platform === 'win32' ? 'ico' : process.platform === 'darwin' ? 'icns' : null
-const extensions = ['jpg', 'png', 'jpeg', sysIcon]
+const extensions = ['jpg', 'png', 'bmp', 'jfif', 'jpeg', sysIcon]
 
 ipcMain.handle('add-file', async (event, arg) => {
   
@@ -40,9 +40,8 @@ ipcMain.handle('add-file', async (event, arg) => {
 
 ipcMain.on('change-icon', (event,arg) => {
   const window = BrowserWindow.getFocusedWindow()
-  console.log(path.extname(arg));
-  const extensionIsSuported = extensions.includes(path.extname(arg).replace('.',''))
-  if(extensionIsSuported){
+  const extensionIsSuported = extensions.includes(path.extname(arg).replace('.', ''))
+  if (extensionIsSuported) {
     window.setIcon(arg)
   }
 })
