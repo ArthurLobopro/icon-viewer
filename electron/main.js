@@ -9,6 +9,8 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 470,
+    minHeight: 470,
     autoHideMenuBar: true,
     icon: path.resolve(__dirname, "../assets/icon.png") ,  
     webPreferences:{
