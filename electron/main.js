@@ -25,7 +25,7 @@ const createWindow = () => {
 app.on('ready', createWindow);
 
 const sysIcon = process.platform === 'win32' ? 'ico' : process.platform === 'darwin' ? 'icns' : null
-const extensions = ['jpg', 'png', 'webp', 'jpeg', sysIcon]
+const extensions = ['jpg', 'png', 'jpeg', sysIcon]
 
 ipcMain.handle('add-file', async (event, arg) => {
   
