@@ -9,6 +9,8 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 470,
+    minHeight: 470,
     autoHideMenuBar: true,
     icon: path.resolve(__dirname, "../assets/icon.png") ,  
     webPreferences:{
@@ -24,11 +26,14 @@ const createWindow = () => {
 
 app.on('ready', createWindow);
 
+const sysIcon = process.platform === 'win32' ? 'ico' : process.platform === 'darwin' ? 'icns' : null
+const extensions = ['jpg', 'png', 'bmp', 'jfif', 'jpeg', sysIcon]
+
 ipcMain.handle('add-file', async (event, arg) => {
-  const sysIcon = process.platform === 'win32' ? 'ico' : null
+  
   return dialog.showOpenDialog({ 
       properties: ['openFile'],
-      filters: [{ name: 'Imagens', extensions: ['jpg', 'png', 'webp', 'jpeg', sysIcon]}]
+      filters: [{ name: 'Imagens', extensions }]
   })
   .then( res => {
       return res.canceled === true ? false : res.filePaths
@@ -37,8 +42,10 @@ ipcMain.handle('add-file', async (event, arg) => {
 
 ipcMain.on('change-icon', (event,arg) => {
   const window = BrowserWindow.getFocusedWindow()
-  console.log(arg);
-  window.setIcon(arg)
+  const extensionIsSuported = extensions.includes(path.extname(arg).replace('.', ''))
+  if (extensionIsSuported) {
+    window.setIcon(arg)
+  }
 })
 
 app.on('window-all-closed', () => {
