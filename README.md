@@ -22,8 +22,8 @@ Para usuários windows:
             </a>
         </li>
         <li> Inicie o programa </li>
-        <li> Escolha uma foto </li>
-        <li>O ícone do programa mudará para a foto selecionada</li>
+        <li> Clique em no botão + para escolher uma foto </li>
+        <li> O ícone do programa mudará para a foto selecionada </li>
     </ul>  
 </p>
 
@@ -40,6 +40,8 @@ Para outras plataformas:
         <li>
             Execute <code>yarn start</code> ou <code>npm start</code> (de acordo com o gerenciador de sua preferência) para iniciar o programa.
         </li>
+        <li> Clique em no botão + para escolher uma foto </li>
+        <li> O ícone do programa mudará para a foto selecionada </li>
     </ul>
 </p>
 
