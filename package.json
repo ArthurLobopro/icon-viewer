@@ -33,7 +33,7 @@
             "name": "icon_viwer",
             "setupExe": "${name}-${version}-setup.exe",
             "setupIcon": "./build/icon.ico",
-            "iconURL": "./build/icon.ico"
+            "iconUrl": "https://raw.githubusercontent.com/ArthurLobopro/icon-viewer/master/build/icon.ico"
           }
         },
         {
