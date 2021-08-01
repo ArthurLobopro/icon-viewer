@@ -1,15 +1,14 @@
 {
   "name": "icon-viewer",
   "productName": "icon-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Taskbar Icon Viewer",
   "main": "electron/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "publish": "electron-forge publish"
   },
   "keywords": [],
   "author": {
@@ -20,7 +19,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon":"./build/icon",
+        "icon": "./build/icon",
         "ignore": [
           ".gitignore",
           "build/",
